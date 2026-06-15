@@ -31,23 +31,16 @@ does not contain clinical scans, patient-level metadata, generated patient
 reports, trained institutional checkpoints, run logs, or paper figures derived
 from private cases.
 
-```mermaid
-flowchart LR
-    A[Private CT volume] --> B[Tumor and organ segmentations]
-    B --> C[CT-derived descriptors]
-    D[FIGO stage and ascites] --> C
-    C --> E[Structured report generation]
-    E --> F[3D-CLIP text embedding]
-    F --> G[Latent diffusion model]
-    G --> H[Synthetic 3D CT sample]
+<p align="center">
+  <img src="assets/fig1_ovesyn_pipeline.png" alt="OvESyn pipeline overview" width="900">
+</p>
 
-    classDef private fill:#f7e6e6,stroke:#9b2c2c,color:#331111;
-    classDef method fill:#e9f4f5,stroke:#2f6f73,color:#0f2f31;
-    classDef output fill:#f2eefc,stroke:#6b46c1,color:#24123f;
-    class A,D private;
-    class B,C,E,F,G method;
-    class H output;
-```
+<p align="center">
+  <b>Figure 1.</b> OvESyn pipeline overview. The method extracts CT-derived features
+  from automatic segmentations, combines them with routine clinical metadata,
+  generates structured radiology text, and uses the resulting report embedding
+  to condition a latent diffusion model for synthetic 3D CT generation.
+</p>
 
 ## Repository Layout
 
@@ -155,6 +148,17 @@ Then replace placeholders such as:
 The original paper experiments used a private HGSOC cohort and therefore cannot
 be reproduced from this repository alone. The code is intended to reproduce the
 method on appropriately governed local data.
+## Qualitative Generation Examples
+
+<p align="center">
+  <img src="assets/fig3_generations.png" alt="Qualitative OvESyn generation examples" width="900">
+</p>
+
+<p align="center">
+  <b>Figure 2.</b> Qualitative comparison between a real CT volume and OvESyn
+  generation variants across axial, coronal, and sagittal views.
+</p>
+
 
 ## Privacy And Data
 

@@ -1,0 +1,22 @@
+{
+  "diffusion_unet_train": {
+    "batch_size": 2,
+    "cache_rate": 0,
+    "lr": 0.0001,
+    "n_epochs": 200,
+    "n_epochs_total": 201,
+    "save_epoch_freq": 50,
+    "freq_to_print": 50,
+    "conditional_free_guidance": 0.1,
+    "continue_training_from": null
+  },
+  "diffusion_unet_inference": {
+    "dim": [512, 512, 128],
+    "spacing": [0.75, 0.75, 3.0],
+    "top_region_index": [0, 1, 0, 0],
+    "bottom_region_index": [0, 1, 0, 0],
+    "random_seed": 0,
+    "num_inference_steps": 30,
+    "modality": 1
+  }
+}

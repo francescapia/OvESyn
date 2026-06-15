@@ -1,0 +1,4 @@
+patient_id,volume_name,label,tumor_mask_path,volume_ml,mean_hu,p10_hu,p90_hu,organs_contact,figo_stage,ascites
+CASE_SYN_0001,CASE_SYN_0001,1,/path/to/private/masks/CASE_SYN_0001/tumor_mask.nii.gz,42.5,58.0,18.0,96.0,"small bowel,colon",III,present
+CASE_SYN_0001,CASE_SYN_0001,9,/path/to/private/masks/CASE_SYN_0001/tumor_mask.nii.gz,118.2,35.0,4.0,82.0,"urinary bladder,colon",III,present
+CASE_SYN_0002,CASE_SYN_0002,9,/path/to/private/masks/CASE_SYN_0002/tumor_mask.nii.gz,76.0,44.0,12.0,74.0,"small bowel",IV,absent

@@ -1,0 +1,63 @@
+# Private data and derived artifacts
+data/
+dataset/
+datasets/
+datasets_public/
+results/
+runs/
+experiments/
+outputs/
+predictions/
+embeddings/
+latents/
+segmentations/
+totalseg/
+cache/
+models/
+checkpoints/
+private_configs/
+logs/
+
+# Medical/image arrays and model artifacts
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Generated tables, reports, and logs
+*.csv
+*.tsv
+*.xlsx
+*.jsonl
+*.log
+*.err
+*.out
+
+# Keep synthetic examples and templates
+!examples/*.csv
+!examples/*.json
+!configs/**/*.json
+
+# Environments and caches
+.env
+venv/
+.venv/
+torch_venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip

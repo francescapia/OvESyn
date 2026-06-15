@@ -1,0 +1,21 @@
+{
+  "data_base_dir": "/path/to/private_ct",
+  "embedding_base_dir": "/path/to/private_latents",
+  "conditioning_base_dir": "/path/to/private_clip_text_embeddings",
+  "json_data_list": "/path/to/private/train.json",
+  "val_json_data_list": "/path/to/private/val.json",
+  "model_dir": "/path/to/private/checkpoints/unet",
+  "model_filename": "unet_ovesyn.pt",
+  "output_dir": "/path/to/private/predictions",
+  "output_prefix": "ovesyn",
+  "trained_autoencoder_path": "/path/to/authorized/autoencoder.pt",
+  "existing_ckpt_filepath": "/path/to/authorized/pretrained_unet.pt",
+  "use_cfg": true,
+  "guidance_scale": 5.0,
+  "report_encoder_model": "xgem_3D",
+  "early_stopping": {
+    "enabled": true,
+    "patience": 15,
+    "min_delta": 0.001
+  }
+}

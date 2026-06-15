@@ -1,0 +1,32 @@
+##############################
+# clip vision & text encoder #
+##############################
+
+clip:
+  symbol: clip
+  args: {}
+
+clip_frozen:
+  super_cfg: clip
+  type: clip_frozen
+  args: {
+          max_length: 77
+  }
+
+clip_text:
+  super_cfg: clip
+  type: clip_text
+  args: {}
+
+clip_vision:
+  super_cfg: clip
+  type: clip_vision
+  args: {}
+
+clip_3D:
+  super_cfg: clip
+  type: clip_3D
+  args: {
+          max_length: 512,
+          vision_embed_dim: 786432
+  }

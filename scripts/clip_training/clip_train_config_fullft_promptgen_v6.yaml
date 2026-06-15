@@ -1,0 +1,71 @@
+clip_model: clip_3D
+data_augmentation:
+  enabled: false
+  probability: 0.5
+  rotation_range: 0.087
+  scale_range: 0.05
+  translation_range:
+  - 25
+  - 25
+  - 6
+data_list: ./dataset/unet_train_data_volumes.json
+dataset: CT-RATE
+early_stopping:
+  enabled: true
+  min_delta: 3e-4
+  patience: 50
+gradient_accumulation_steps: 6
+init_ckpt: ./models/CLIP3D_Finding_Impression_30ep.pt
+logging_steps: 10
+logs: ./experiments/clip_ft_logs
+eval_every_epochs: 5
+eval_train_retrieval: false
+eval_train_loss: false
+eval_val_retrieval: true
+lora:
+  alpha: 32
+  dropout: 0.2
+  enabled: false
+  r: 16
+  target_modules:
+  - text_model.encoder.layers
+  - self_attn.q_proj
+  - self_attn.v_proj
+  - vision_model.enc_spatial_transformer.layers
+  - vision_model.enc_temporal_transformer.layers
+  - .to_q
+  - .to_out
+n_gpu: 1
+name: OVARIAN_CLIP3D_FULLFT_PROMPTGEN_V6_v1
+num_train_epochs: 200
+num_workers: 8
+optimizer:
+  params:
+    eps: 1.0e-08
+    lr: 2e-5
+    weight_decay: 0.01
+  type: AdamW
+per_gpu_train_batch_size: 2
+persistent_workers: true
+pin_memory: true
+report_type: full_report
+reports_csv: ./dataset/reports/Promptgen_vers_6/reports.csv
+save_steps: 0
+save_steps_epochs: 10
+saved_checkpoints: ./models/clip_ft_checkpoints
+scheduler: constant_with_warmup
+warmup_ratio: 0.1
+seed: 11
+use_amp: true
+val_data_list: ./dataset/unet_val_data_volumes.json
+test_data_list: ./dataset/unet_test_data_volumes.json
+evaluation:
+  expected_volume_shape: [1, 512, 512, 128]
+  csv_columns:
+    volume_name: "VolumeName"
+    findings: "Findings_EN"
+    impressions: "Impressions_EN"
+  linear_probing:
+    enabled: true
+    max_iter: 2000
+    solver: "lbfgs"

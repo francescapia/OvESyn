@@ -1,0 +1,17 @@
+{
+  "training": [
+    {
+      "image": "data/private_ct/CASE_SYN_0001/ct.nii.gz"
+    }
+  ],
+  "validation": [
+    {
+      "image": "data/private_ct/CASE_SYN_0002/ct.nii.gz"
+    }
+  ],
+  "test": [
+    {
+      "image": "data/private_ct/CASE_SYN_0003/ct.nii.gz"
+    }
+  ]
+}

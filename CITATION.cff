@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use OvESyn, please cite the associated manuscript."
+title: "Evidence-Based Text-Conditioned 3D CT Synthesis for Ovarian Cancer"
+authors:
+  - family-names: "Panaccione"
+    given-names: "Francesca Pia"
+  - family-names: "Lomurno"
+    given-names: "Eugenio"
+  - family-names: "Fati"
+    given-names: "Francesca"
+  - name: "and others"
+year: 2026
+status: "under review"

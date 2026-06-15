@@ -1,0 +1,14 @@
+{
+  "data_base_dir": "/path/to/private_ct",
+  "embedding_base_dir": "/path/to/private_clip_text_embeddings",
+  "json_data_list": "/path/to/private/test.json",
+  "model_dir": "/path/to/private/checkpoints/unet",
+  "model_filename": "unet_ovesyn.pt",
+  "output_dir": "/path/to/private/generated_volumes",
+  "output_prefix": "ovesyn",
+  "trained_autoencoder_path": "/path/to/authorized/autoencoder.pt",
+  "existing_ckpt_filepath": "/path/to/private/checkpoints/unet/unet_ovesyn.pt",
+  "use_cfg": true,
+  "guidance_scale": 5.0,
+  "report_encoder_model": "xgem_3D"
+}

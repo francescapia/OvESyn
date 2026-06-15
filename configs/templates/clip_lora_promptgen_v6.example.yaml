@@ -1,0 +1,76 @@
+clip_model: clip_3D
+dataset: PRIVATE_OVARIAN_CT
+name: OVARIAN_CLIP3D_LORA_PROMPTGEN_V6
+seed: 11
+n_gpu: 1
+use_amp: true
+
+data_list: /path/to/private/train.json
+val_data_list: /path/to/private/val.json
+test_data_list: /path/to/private/test.json
+reports_csv: /path/to/private/reports.csv
+init_ckpt: /path/to/authorized/CLIP3D_pretrained.pt
+saved_checkpoints: /path/to/private/checkpoints/clip
+logs: /path/to/private/logs/clip
+
+report_type: full_report
+num_train_epochs: 100
+per_gpu_train_batch_size: 3
+gradient_accumulation_steps: 1
+num_workers: 8
+pin_memory: true
+persistent_workers: true
+logging_steps: 10
+eval_every_epochs: 5
+eval_train_retrieval: false
+eval_train_loss: false
+eval_val_retrieval: true
+
+optimizer:
+  type: AdamW
+  params:
+    lr: 2e-5
+    weight_decay: 0.01
+    eps: 1.0e-08
+
+scheduler: cosine_with_warmup
+warmup_ratio: 0.05
+save_steps: 0
+save_steps_epochs: 10
+
+early_stopping:
+  enabled: true
+  patience: 10
+  min_delta: 3e-4
+
+data_augmentation:
+  enabled: false
+  probability: 0.5
+  rotation_range: 0.087
+  scale_range: 0.05
+  translation_range: [25, 25, 6]
+
+lora:
+  enabled: true
+  r: 16
+  alpha: 32
+  dropout: 0.2
+  target_modules:
+    - text_model.encoder.layers
+    - self_attn.q_proj
+    - self_attn.v_proj
+    - vision_model.enc_spatial_transformer.layers
+    - vision_model.enc_temporal_transformer.layers
+    - .to_q
+    - .to_out
+
+evaluation:
+  expected_volume_shape: [1, 512, 512, 128]
+  csv_columns:
+    volume_name: VolumeName
+    findings: Findings_EN
+    impressions: Impressions_EN
+  linear_probing:
+    enabled: true
+    max_iter: 2000
+    solver: lbfgs

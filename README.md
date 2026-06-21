@@ -32,7 +32,7 @@ reports, trained institutional checkpoints, run logs, or paper figures derived
 from private cases.
 
 <p align="center">
-  <img src="assets/fig3_new.pdf" alt="OvESyn pipeline overview" width="900">
+  <embed src="assets/fig3_new.pdf" type="application/pdf" width="900" height="600">
 </p>
 
 <p align="center">

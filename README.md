@@ -32,7 +32,7 @@ reports, trained institutional checkpoints, run logs, or paper figures derived
 from private cases.
 
 <p align="center">
-  <img src="assets/figure3_new.png" alt="OvESyn pipeline overview" width="900">
+  <img src="assets/fig1_ovesyn_pipeline.png" alt="OvESyn pipeline overview" width="900">
 </p>
 
 <p align="center">
@@ -151,7 +151,7 @@ method on appropriately governed local data.
 ## Qualitative Generation Examples
 
 <p align="center">
-  <img src="assets/fig3_generations.png" alt="Qualitative OvESyn generation examples" width="900">
+  <img src="assets/figure3_new.png" alt="Qualitative OvESyn generation examples" width="900">
 </p>
 
 <p align="center">
